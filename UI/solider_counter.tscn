@@ -6,3 +6,31 @@
 offset_right = 40.0
 offset_bottom = 23.0
 script = ExtResource("1_tsscb")
+
+[node name="Red" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 1.0
+offset_right = 457.0
+offset_bottom = 11.0
+max_value = 1.0
+value = 0.5
+show_percentage = false
+
+[node name="Green" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 26.0
+offset_right = 457.0
+offset_bottom = 36.0
+max_value = 1.0
+show_percentage = false
+
+[node name="Blue" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 54.0
+offset_right = 457.0
+offset_bottom = 64.0
+max_value = 1.0
+show_percentage = false

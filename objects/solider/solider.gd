@@ -38,7 +38,7 @@ func _on_body_entered(body: Node) -> void:
 	changedColor.emit(myColor, newColor)
 	myColor = newColor
 	updateColor()
-
+ 
 func resolveWinner(color1: int, color2: int)->int:
 	if color1 == color2:
 		return color1

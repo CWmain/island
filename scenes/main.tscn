@@ -149,7 +149,7 @@ tile_set = SubResource("TileSet_jyhfs")
 [node name="Red" parent="." node_paths=PackedStringArray("solider_counter") instance=ExtResource("3_sugp2")]
 position = Vector2(950, 157)
 solider = ExtResource("1_o5qli")
-toSpawn = 100
+toSpawn = 20
 spawnGap = 0.1
 spawnColor = 0
 solider_counter = NodePath("../SoliderCounter")
@@ -157,7 +157,7 @@ solider_counter = NodePath("../SoliderCounter")
 [node name="Blue" parent="." node_paths=PackedStringArray("solider_counter") instance=ExtResource("3_sugp2")]
 position = Vector2(544, 543)
 solider = ExtResource("1_o5qli")
-toSpawn = 100
+toSpawn = 20
 spawnGap = 0.1
 spawnColor = 1
 solider_counter = NodePath("../SoliderCounter")
@@ -165,9 +165,10 @@ solider_counter = NodePath("../SoliderCounter")
 [node name="Green" parent="." node_paths=PackedStringArray("solider_counter") instance=ExtResource("3_sugp2")]
 position = Vector2(230, 134)
 solider = ExtResource("1_o5qli")
-toSpawn = 100
+toSpawn = 20
 spawnGap = 0.1
 spawnColor = 2
 solider_counter = NodePath("../SoliderCounter")
 
 [node name="SoliderCounter" parent="." instance=ExtResource("4_jyhfs")]
+maxSoliders = 60.0
