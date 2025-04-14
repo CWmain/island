@@ -16,6 +16,7 @@ lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 5
 script = ExtResource("1_yxcip")
+speed = 250.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0
@@ -27,6 +28,7 @@ offset_bottom = 8.0
 shape = SubResource("RectangleShape2D_g6x7d")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 

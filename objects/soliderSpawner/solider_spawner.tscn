@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d17ccac5gl80s"]
+
+[ext_resource type="Script" uid="uid://35iepraad546" path="res://objects/soliderSpawner/solider_spawner.gd" id="1_cfyst"]
+
+[node name="SoliderSpawner" type="Node2D"]
+script = ExtResource("1_cfyst")

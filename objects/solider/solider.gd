@@ -34,7 +34,6 @@ func _on_body_entered(body: Node) -> void:
 		return
 	myColor = resolveWinner(myColor, body.myColor)
 	updateColor()
-	print("%s collided with %s" % [name, body.name])
 
 func resolveWinner(color1: int, color2: int)->int:
 	if color1 == color2:
@@ -46,7 +45,7 @@ func resolveWinner(color1: int, color2: int)->int:
 	if (color1 == soliderColor.GREEN and color2 == soliderColor.BLUE) or (color2 == soliderColor.GREEN and color1 == soliderColor.BLUE):
 		return soliderColor.GREEN
 		
-	if (color1 == soliderColor.BLUE and color2 == soliderColor.RED) or (color1 == soliderColor.BLUE and color2 == soliderColor.RED):
+	if (color1 == soliderColor.BLUE and color2 == soliderColor.RED) or (color2 == soliderColor.BLUE and color1 == soliderColor.RED):
 		return soliderColor.BLUE
 	
 	printerr("No matching colors???")
