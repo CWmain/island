@@ -8,7 +8,7 @@ enum soliderColor{
 }
 
 @export var speed: float = 100
-@export var myColor: soliderColor = 0
+@export var myColor: soliderColor = 0 as soliderColor
 
 @onready var label: Label = $Label
 @onready var color_rect: ColorRect = $ColorRect
@@ -39,7 +39,7 @@ func _on_body_entered(body: Node) -> void:
 	myColor = newColor
 	updateColor()
  
-func resolveWinner(color1: int, color2: int)->int:
+func resolveWinner(color1: int, color2: int)->soliderColor:
 	if color1 == color2:
 		return color1
 		

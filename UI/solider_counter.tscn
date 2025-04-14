@@ -17,7 +17,7 @@ max_value = 1.0
 value = 0.5
 show_percentage = false
 
-[node name="Green" type="ProgressBar" parent="."]
+[node name="Blue" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 257.0
 offset_top = 26.0
@@ -26,7 +26,7 @@ offset_bottom = 36.0
 max_value = 1.0
 show_percentage = false
 
-[node name="Blue" type="ProgressBar" parent="."]
+[node name="Green" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 257.0
 offset_top = 54.0
