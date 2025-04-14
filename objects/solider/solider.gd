@@ -13,6 +13,8 @@ enum soliderColor{
 @onready var label: Label = $Label
 @onready var color_rect: ColorRect = $ColorRect
 
+signal changedColor(oldColor: soliderColor, newColor: soliderColor)
+
 func _ready() -> void:
 	updateColor()
 
@@ -32,8 +34,9 @@ func updateColor()->void:
 func _on_body_entered(body: Node) -> void:
 	if body is not Solider:
 		return
-		
-	myColor = resolveWinner(myColor, body.myColor)
+	var newColor: soliderColor = resolveWinner(myColor, body.myColor)
+	changedColor.emit(myColor, newColor)
+	myColor = newColor
 	updateColor()
 
 func resolveWinner(color1: int, color2: int)->int:

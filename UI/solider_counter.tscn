@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b88cvbbpgmfls"]
+
+[ext_resource type="Script" uid="uid://eh3o6lr6o0os" path="res://UI/solider_counter.gd" id="1_tsscb"]
+
+[node name="SoliderCounter" type="Label"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_tsscb")
