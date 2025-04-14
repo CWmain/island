@@ -32,6 +32,7 @@ func updateColor()->void:
 func _on_body_entered(body: Node) -> void:
 	if body is not Solider:
 		return
+		
 	myColor = resolveWinner(myColor, body.myColor)
 	updateColor()
 
