@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://blv1rrwv4tngb"]
+[gd_scene load_steps=9 format=4 uid="uid://blv1rrwv4tngb"]
 
 [ext_resource type="PackedScene" uid="uid://bojq7clkjdcok" path="res://objects/solider/solider.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://cqw4mc8hquvh1" path="res://icon.svg" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://d17ccac5gl80s" path="res://objects/soliderSpawner/solider_spawner.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b88cvbbpgmfls" path="res://UI/solider_counter.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://d2bg1h0guxdf4" path="res://objects/conversionZone/conversion_zone.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://c7q4dvrm0i430" path="res://objects/immortalityField/immortality_field.tscn" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sugp2"]
 texture = ExtResource("2_0wfyh")
@@ -175,4 +176,8 @@ solider_counter = NodePath("../SoliderCounter")
 maxSoliders = 60.0
 
 [node name="ConversionZone" parent="." instance=ExtResource("5_tbgi4")]
+process_mode = 4
 position = Vector2(495, 231)
+
+[node name="ImmortalityField" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(293, 301)

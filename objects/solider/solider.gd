@@ -9,6 +9,7 @@ enum soliderColor{
 
 @export var speed: float = 100
 @export var myColor: soliderColor = 0 as soliderColor
+var isImmune: bool = true
 
 @onready var label: Label = $Label
 @onready var color_rect: ColorRect = $ColorRect
@@ -39,20 +40,21 @@ func _on_body_entered(body: Node) -> void:
 	myColor = newColor
 	updateColor()
  
-func resolveWinner(color1: int, color2: int)->soliderColor:
-	if color1 == color2:
-		return color1
+func resolveWinner(currentColor: int, otherColor: int)->soliderColor:
+	if isImmune:
+		return currentColor
 		
-	if (color1 == soliderColor.RED and color2 == soliderColor.GREEN) or (color2 == soliderColor.RED and color1 == soliderColor.GREEN):
+	if currentColor == otherColor:
+		return currentColor
+		
+	if (currentColor == soliderColor.RED and otherColor == soliderColor.GREEN) or (otherColor == soliderColor.RED and currentColor == soliderColor.GREEN):
 		return soliderColor.RED
 		
-	if (color1 == soliderColor.GREEN and color2 == soliderColor.BLUE) or (color2 == soliderColor.GREEN and color1 == soliderColor.BLUE):
+	if (currentColor == soliderColor.GREEN and otherColor == soliderColor.BLUE) or (otherColor == soliderColor.GREEN and currentColor == soliderColor.BLUE):
 		return soliderColor.GREEN
 		
-	if (color1 == soliderColor.BLUE and color2 == soliderColor.RED) or (color2 == soliderColor.BLUE and color1 == soliderColor.RED):
+	if (currentColor == soliderColor.BLUE and otherColor == soliderColor.RED) or (otherColor == soliderColor.BLUE and currentColor == soliderColor.RED):
 		return soliderColor.BLUE
 	
 	printerr("No matching colors???")
 	return -1
-		
-	
