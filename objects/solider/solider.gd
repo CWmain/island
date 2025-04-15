@@ -33,8 +33,10 @@ func _physics_process(delta: float) -> void:
 			atlasCoord = Vector2i(2,0)
 		soliderColor.GREEN:
 			atlasCoord = Vector2i(1,0)
-	
-	trailMap.set_cell(trailMap.local_to_map(position),0,atlasCoord)
+	var centerCoord: Vector2i = trailMap.local_to_map(position)
+	trailMap.set_cell(centerCoord,0,atlasCoord)
+	for coords in trailMap.get_surrounding_cells(centerCoord):
+		trailMap.set_cell(coords,0,atlasCoord)
 func updateColor()->void:
 	if myColor == soliderColor.RED:
 		color_rect.color = Color.RED
