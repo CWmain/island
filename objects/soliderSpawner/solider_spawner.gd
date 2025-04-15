@@ -4,7 +4,10 @@ extends Node2D
 @export var toSpawn: int
 @export var spawnGap: float
 @export var spawnColor: Solider.soliderColor = -1
+
 @export var solider_counter: Label
+@export var trailMap: TileMapLayer
+
 var spawnCount: int = 0
 var timer: float = 0.0
 var newColor: int = 0
@@ -15,6 +18,7 @@ func _physics_process(delta: float) -> void:
 		timer -= spawnGap
 		var s:Solider = solider.instantiate()
 		s.changedColor.connect(solider_counter._on_solider_color_change)
+		s.trailMap = trailMap
 		
 		get_tree().get_root().add_child(s)
 		s.linear_velocity = Vector2((randf()*2)-1,(randf()*2)-1)

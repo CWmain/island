@@ -9,6 +9,7 @@ enum soliderColor{
 
 @export var speed: float = 100
 @export var myColor: soliderColor = 0 as soliderColor
+@export var trailMap: TileMapLayer = null
 var isImmune: bool = true
 
 @onready var label: Label = $Label
@@ -17,13 +18,23 @@ var isImmune: bool = true
 signal changedColor(oldColor: soliderColor, newColor: soliderColor)
 
 func _ready() -> void:
+	assert(trailMap != null)
 	updateColor()
 
 func _physics_process(delta: float) -> void:
 	# Normalise the speed of all soliders
 	linear_velocity = linear_velocity.normalized()*speed
 	label.text = str(linear_velocity.length())
-
+	var atlasCoord: Vector2i
+	match myColor:
+		soliderColor.RED:
+			atlasCoord = Vector2i(0,0)
+		soliderColor.BLUE:
+			atlasCoord = Vector2i(2,0)
+		soliderColor.GREEN:
+			atlasCoord = Vector2i(1,0)
+	
+	trailMap.set_cell(trailMap.local_to_map(position),0,atlasCoord)
 func updateColor()->void:
 	if myColor == soliderColor.RED:
 		color_rect.color = Color.RED
