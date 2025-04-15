@@ -1,16 +1,16 @@
 extends Label
 
-var count: Dictionary[Solider.soliderColor, int]
+var count: Dictionary
 @onready var red: ProgressBar = $Red
 @onready var green: ProgressBar = $Green
 @onready var blue: ProgressBar = $Blue
 
 @export var maxSoliders: float = 300.0
+@export var soliderManager: SoliderManager = null
 
 func _ready() -> void:
-	count[Solider.soliderColor.RED] = 0
-	count[Solider.soliderColor.BLUE] = 0
-	count[Solider.soliderColor.GREEN] = 0
+	assert(soliderManager != null)
+	count = soliderManager.count
 	updateLabel()
 
 func _on_solider_color_change(oldColor: Solider.soliderColor, newColor: Solider.soliderColor):

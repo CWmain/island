@@ -1,4 +1,5 @@
 extends Node2D
+class_name Spawner
 
 @export var solider: PackedScene
 @export var toSpawn: int
@@ -35,4 +36,7 @@ func _physics_process(delta: float) -> void:
 		s.updateColor()
 		
 		spawnCount += 1
-	
+
+func orderSoliders(numberToSpawn: int) -> void:
+	toSpawn = numberToSpawn
+	spawnCount = 0
