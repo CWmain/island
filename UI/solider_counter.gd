@@ -11,6 +11,7 @@ var count: Dictionary
 func _ready() -> void:
 	assert(soliderManager != null)
 	count = soliderManager.count
+	soliderManager.updateCount.connect(updateLabel)
 	updateLabel()
 
 func _on_solider_color_change(oldColor: Solider.soliderColor, newColor: Solider.soliderColor):
@@ -19,8 +20,11 @@ func _on_solider_color_change(oldColor: Solider.soliderColor, newColor: Solider.
 	updateLabel()
 
 func updateLabel()->void:
-	red.value = count[Solider.soliderColor.RED]/maxSoliders
-	green.value = count[Solider.soliderColor.GREEN]/maxSoliders
-	blue.value = count[Solider.soliderColor.BLUE]/maxSoliders
-	var total: int = count[Solider.soliderColor.RED] + count[Solider.soliderColor.BLUE] + count[Solider.soliderColor.GREEN]
+	var total: float = soliderManager.soliderTotal
+
+	if total != 0:
+		red.value = count[Solider.soliderColor.RED]/total
+		green.value = count[Solider.soliderColor.GREEN]/total
+		blue.value = count[Solider.soliderColor.BLUE]/total
+	
 	text = "TOTAL: %d\nRED: %d\nBLUE: %d\nGREEN: %d" % [total, count[Solider.soliderColor.RED], count[Solider.soliderColor.BLUE], count[Solider.soliderColor.GREEN]]

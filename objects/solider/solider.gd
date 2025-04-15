@@ -10,7 +10,7 @@ enum soliderColor{
 @export var speed: float = 100
 @export var myColor: soliderColor = 0 as soliderColor
 @export var trailMap: TileMapLayer = null
-var isImmune: bool = true
+var isImmune: bool = false
 
 @onready var label: Label = $Label
 @onready var color_rect: ColorRect = $ColorRect

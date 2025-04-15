@@ -172,28 +172,25 @@ tile_set = SubResource("TileSet_jyhfs")
 visible = false
 tile_set = SubResource("TileSet_85g3d")
 
-[node name="Red" parent="." node_paths=PackedStringArray("solider_counter", "trailMap") instance=ExtResource("3_sugp2")]
+[node name="Red" parent="." node_paths=PackedStringArray("trailMap") instance=ExtResource("3_sugp2")]
 position = Vector2(950, 157)
 solider = ExtResource("1_o5qli")
 spawnGap = 0.1
 spawnColor = 0
-solider_counter = NodePath("../SoliderCounter")
 trailMap = NodePath("../TrailPath")
 
-[node name="Blue" parent="." node_paths=PackedStringArray("solider_counter", "trailMap") instance=ExtResource("3_sugp2")]
+[node name="Blue" parent="." node_paths=PackedStringArray("trailMap") instance=ExtResource("3_sugp2")]
 position = Vector2(544, 543)
 solider = ExtResource("1_o5qli")
 spawnGap = 0.1
 spawnColor = 1
-solider_counter = NodePath("../SoliderCounter")
 trailMap = NodePath("../TrailPath")
 
-[node name="Green" parent="." node_paths=PackedStringArray("solider_counter", "trailMap") instance=ExtResource("3_sugp2")]
+[node name="Green" parent="." node_paths=PackedStringArray("trailMap") instance=ExtResource("3_sugp2")]
 position = Vector2(230, 134)
 solider = ExtResource("1_o5qli")
 spawnGap = 0.1
 spawnColor = 2
-solider_counter = NodePath("../SoliderCounter")
 trailMap = NodePath("../TrailPath")
 
 [node name="SoliderCounter" parent="." node_paths=PackedStringArray("soliderManager") instance=ExtResource("4_jyhfs")]
