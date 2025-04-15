@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 		spawners[Solider.soliderColor.RED].orderSoliders(20)
 	if timer > 5 and !b:
 		b = true
-		spawners[Solider.soliderColor.BLUE].orderSoliders(10)
+		spawners[Solider.soliderColor.BLUE].orderSoliders(100)
 	if timer > 7 and !c:
 		c = true
 		spawners[Solider.soliderColor.GREEN].orderSoliders(30)
